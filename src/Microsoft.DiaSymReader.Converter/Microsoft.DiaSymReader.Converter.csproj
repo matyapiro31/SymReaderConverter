@@ -1,0 +1,51 @@
+﻿<!-- Copyright (c)  Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <Description>Converter between Windows PDB and Portable PDB formats.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>DiaSymReader ISymUnmanagedReader Portable PDB debugging conversion</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DiaSymReader.Native" Version="1.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Microsoft.DiaSymReader.Converter.UnitTests" />
+    <InternalsVisibleTo Include="Pdb2Pdb.UnitTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DiaSymReader">
+      <HintPath>..\Pdb2Pdb\lib\Microsoft.DiaSymReader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\Pdb2Pdb\lib\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\Pdb2Pdb\lib\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ConverterResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConverterResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ConverterResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConverterResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Microsoft.DiaSymReader.Tools</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\Microsoft.CodeAnalysis.Metadata\Microsoft.CodeAnalysis.Metadata.projitems" />
+  <Import Project="..\Microsoft.CodeAnalysis.PooledObjects\Microsoft.CodeAnalysis.PooledObjects.projitems" />
+  
+  <!-- Workaround for https://github.com/Microsoft/msbuild/issues/1721. -->
+  <Import Project="..\Directory.Build.targets" Condition="'$(TargetFramework)' == ''" />
+</Project>
