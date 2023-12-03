@@ -50,13 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.DiaSymReader">
-      <HintPath>lib\Microsoft.DiaSymReader.dll</HintPath>
+      <HintPath>..\..\lib\Microsoft.DiaSymReader.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable">
-      <HintPath>lib\System.Collections.Immutable.dll</HintPath>
+      <HintPath>..\..\lib\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Metadata">
-      <HintPath>lib\System.Reflection.Metadata.dll</HintPath>
+      <HintPath>..\..\lib\System.Reflection.Metadata.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

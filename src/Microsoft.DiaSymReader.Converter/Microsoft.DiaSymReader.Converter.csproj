@@ -20,13 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.DiaSymReader">
-      <HintPath>..\Pdb2Pdb\lib\Microsoft.DiaSymReader.dll</HintPath>
+      <HintPath>..\..\lib\Microsoft.DiaSymReader.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable">
-      <HintPath>..\Pdb2Pdb\lib\System.Collections.Immutable.dll</HintPath>
+      <HintPath>..\..\lib\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Metadata">
-      <HintPath>..\Pdb2Pdb\lib\System.Reflection.Metadata.dll</HintPath>
+      <HintPath>..\..\lib\System.Reflection.Metadata.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
